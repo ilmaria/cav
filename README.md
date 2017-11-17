@@ -1,1 +1,4 @@
 # cav
+
+## Dependencies
+- SDL2
