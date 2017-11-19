@@ -22,6 +22,7 @@ commonflags="\
     # -Wswitch-enum \
     # -Wconversion \
     # -Wunreachable-code
+libs="-lSDL2"
 
 case $build_type in
     "release")
@@ -34,4 +35,4 @@ case $build_type in
         ;;
 esac
 
-$CC $CFLAGS "src/main.c" -o "$build_dir/$executable"
+$CC $CFLAGS $libs "src/main.c" -o "$build_dir/$executable"
