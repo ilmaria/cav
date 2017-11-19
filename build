@@ -26,13 +26,15 @@ libs="-lSDL2"
 
 case $build_type in
     "release")
-        build_dir="build/release"
+        build_dir="./build/release"
         CFLAGS="$release_flags $commonflags"
         ;;
     *)
-        build_dir="build/dev"
+        build_dir="./build/dev"
         CFLAGS="$debugflags $commonflags"
         ;;
 esac
+
+mkdir -p "$build_dir"
 
 $CC $CFLAGS $libs "src/main.c" -o "$build_dir/$executable"

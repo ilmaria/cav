@@ -1,5 +1,5 @@
 #pragma warning(push, 0)
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #pragma warning(pop)
 #include <stdio.h>
 //Screen dimension constants
