@@ -1,5 +1,6 @@
 .vscode/
-build/
-3rd_party/
+dist/
+include/
+lib/
 
 *.pdb
