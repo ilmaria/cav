@@ -1,0 +1,37 @@
+#!/bin/sh
+
+build_type=$1
+CC="gcc"
+executable="cav"
+debugflags="-Og"
+releaseflags="-O3"
+commonflags="\
+    -Wall \
+    -Wextra \
+    -Wfloat-equal \
+    -Wundef \
+    -Wshadow \
+    -Wpointer-arith \
+    -Wcast-align \
+    -Wstrict-prototypes \
+    -Wstrict-overflow=5 \
+    -Wwrite-strings \
+    -Waggregate-return"
+    # -Wcast-qual \
+    # -Wswitch-default \
+    # -Wswitch-enum \
+    # -Wconversion \
+    # -Wunreachable-code
+
+case $build_type in
+    "release")
+        build_dir="build/release"
+        CFLAGS="$release_flags $commonflags"
+        ;;
+    *)
+        build_dir="build/dev"
+        CFLAGS="$debugflags $commonflags"
+        ;;
+esac
+
+$CC $CFLAGS "src/main.c" -o "$build_dir/$executable"

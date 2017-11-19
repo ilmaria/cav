@@ -2,10 +2,10 @@
 
 set build_type=%1
 set arch=x64
-set executable=cav
+set executable="cav"
 set debugflags=/Od /Zi
 set releaseflags=/Ox /GL /Qpar
-set devflags=%releaseflags% /Zi
+set devflags=/Zi
 set commonflags=/Wall  /I "3rd_party\SDL2\include"
 set deps="3rd_party\SDL2\lib\x64\SDL2.dll"
 
